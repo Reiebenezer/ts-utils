@@ -1,11 +1,12 @@
 {
   "name": "@reiebenezer/ts-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A personal compilation of Typescript Utilities and Helper functions",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "type": "module",
   "types": "dist/index.d.ts",
+  "files": ["dist"],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
