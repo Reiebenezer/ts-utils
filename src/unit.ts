@@ -24,6 +24,9 @@ export interface Unit {
 
 	/** Raise to exponent. Creates a copy of the original */
 	pow(exponent: number): Unit;
+
+	/** Returns a string representation of a unit, which is in pixels. */
+	toString(): string;
 }
 
 export function Unit(unitString: string): Unit;
@@ -50,7 +53,7 @@ export function Unit(valueOrString: number | string, unit: UnitType = 'px'): Uni
 	}
 
 	// get rem value
-	const remSize = parseFloat(getComputedStyle(document.documentElement).fontSize || '16');
+	const remSize = parseFloat(typeof window === 'undefined' ? '16' : getComputedStyle(document.documentElement).fontSize);
 
 	// Check unit type for conversion to pixels
 	switch (mUnit) {
@@ -80,6 +83,7 @@ export function Unit(valueOrString: number | string, unit: UnitType = 'px'): Uni
 		get value() {
 			return pixels;
 		},
+
 		get type() {
 			return mUnit;
 		},
@@ -93,7 +97,7 @@ export function Unit(valueOrString: number | string, unit: UnitType = 'px'): Uni
 		},
 
 		multiply(unit) {
-			return Unit.difference(this, unit);
+			return Unit.product(this, unit);
 		},
 
 		divide(unit) {
@@ -103,7 +107,11 @@ export function Unit(valueOrString: number | string, unit: UnitType = 'px'): Uni
 		pow(exponent) {
 			let raised = this.value ** exponent;
 			return Unit(raised, mUnit);
-		}
+		},
+
+		toString() {
+			return this.px();
+		},
 	};
 }
 

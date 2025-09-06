@@ -1,6 +1,6 @@
 {
   "name": "@reiebenezer/ts-utils",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A personal compilation of Typescript Utilities and Helper functions",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -10,13 +10,32 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./*": {
-      "types": "./dist/*.d.ts",
-      "import": "./dist/*.mjs",
-      "require": "./dist/*.cjs"
+    
+    "./color": {
+      "types": "./dist/color.d.ts",
+      "import": "./dist/color.js",
+      "require": "./dist/color.cjs"
+    },
+
+    "./object": {
+      "types": "./dist/object.d.ts",
+      "import": "./dist/object.js",
+      "require": "./dist/object.cjs"
+    },
+
+    "./unit": {
+      "types": "./dist/unit.d.ts",
+      "import": "./dist/unit.js",
+      "require": "./dist/unit.cjs"
+    },
+
+    "./vector": {
+      "types": "./dist/vector.d.ts",
+      "import": "./dist/vector.js",
+      "require": "./dist/vector.cjs"
     }
   },
   "scripts": {

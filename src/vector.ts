@@ -54,6 +54,9 @@ interface Vector {
 	 * @param isDeg Asserts whether `angle` is in degrees. Default `true`
 	 */
 	rotate(angle: number, isDeg?: boolean): Vector;
+
+	/** Returns a string representation of this object, which is just the translate property. */
+	toString(): string;
 }
 
 function Vector(x: Unit, y: Unit): Vector {
@@ -109,7 +112,11 @@ function Vector(x: Unit, y: Unit): Vector {
 				Unit.difference(this.x.multiply(Unit(Math.cos(rad))), this.y.multiply(Unit(Math.sin(rad)))),
 				Unit.sum(this.x.multiply(Unit(Math.sin(rad))), this.y.multiply(Unit(Math.cos(rad))))
 			);
-		}
+		},
+
+		toString() {
+			return this.translate.join(" ");
+		},
 	};
 }
 
