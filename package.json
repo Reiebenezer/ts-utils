@@ -13,29 +13,35 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    
     "./color": {
       "types": "./dist/color.d.ts",
       "import": "./dist/color.js",
       "require": "./dist/color.cjs"
     },
-
     "./object": {
       "types": "./dist/object.d.ts",
       "import": "./dist/object.js",
       "require": "./dist/object.cjs"
     },
-
     "./unit": {
       "types": "./dist/unit.d.ts",
       "import": "./dist/unit.js",
       "require": "./dist/unit.cjs"
     },
-
     "./vector": {
       "types": "./dist/vector.d.ts",
       "import": "./dist/vector.js",
       "require": "./dist/vector.cjs"
+    },
+    "./math": {
+      "types": "./dist/math.d.ts",
+      "import": "./dist/math.js",
+      "require": "./dist/math.cjs"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js",
+      "require": "./dist/react.cjs"
     }
   },
   "scripts": {
@@ -45,7 +51,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "color-convert": "^3.1.0"
+    "color-convert": "^3.1.0",
+    "react": "^19.2.0"
   },
   "devDependencies": {
     "tsup": "^8.5.0"
