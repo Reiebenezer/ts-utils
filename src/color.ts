@@ -19,6 +19,7 @@ type Hex = `#${string}`;
 
 export interface Color {
 	toString(): string;
+	toJSON(): string;
 
 	hsl(useDecimals?: boolean): HSL;
 	hex(): Hex;
@@ -54,6 +55,10 @@ export function Color(color: RGB | HSL | Hex, alpha = 255): Color {
 	return {
 		/** @returns the hex value of this class. Includes the alpha value unless specified otherwise */
 		toString() {
+			return this.hex();
+		},
+
+		toJSON() {
 			return this.hex();
 		},
 
