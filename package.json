@@ -1,6 +1,6 @@
 {
   "name": "@reiebenezer/ts-utils",
-  "version": "0.1.2",
+  "version": "0.1.2-patch-2",
   "description": "A personal compilation of Typescript Utilities and Helper functions",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
