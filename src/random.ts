@@ -1,5 +1,5 @@
 export function randomSeed() {
-  return Math.floor(Math.abs((Math.random() * 2) ** 32));
+  return Math.floor(Math.abs(Math.random() * (2 ** 32)));
 }
 
 export function createRNG(seed = randomSeed()): Seeder {
@@ -47,7 +47,10 @@ export function createRNG(seed = randomSeed()): Seeder {
       return new Date(start.getTime() + offset);
     },
 
-    pickFrom: (arr) => arr[generateNumber() % arr.length]!,
+    pickFrom(arr) {
+      if (arr.length === 0) throw new RangeError('You cannot pick from an empty array!');
+      return arr[generateNumber() % arr.length];
+    },
   };
 }
 
