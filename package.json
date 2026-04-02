@@ -1,6 +1,6 @@
 {
   "name": "@reiebenezer/ts-utils",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "A personal compilation of Typescript Utilities and Helper functions",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -47,6 +47,11 @@
       "types": "./dist/random.d.ts",
       "import": "./dist/random.js",
       "require": "./dist/random.cjs"
+    },
+    "./signal": {
+      "types": "./dist/signal.d.ts",
+      "import": "./dist/signal.js",
+      "require": "./dist/signal.cjs"
     }
   },
   "scripts": {

@@ -1,5 +1,7 @@
 /** 
  * Clone Object Utility
+ * 
+ * @deprecated in favor of `structuredClone()`
  */
 
 export function cloneObject<T>(this: T, cloneMethods = true): T {
