@@ -41,7 +41,9 @@ function __signal_internal<T>(initialValue: T): __internal_WritableSignalWithCle
  *
  * Creates a signal, a reactive version of any value passed into it.
  */
-export function signal<T>(initialValue: T): WritableSignal<T> {
+export function signal<T>(initialValue: T): WritableSignal<T>
+export function signal<T>(): WritableSignal<T | undefined>;
+export function signal<T>(initialValue?: T): WritableSignal<T | undefined> {
   const { get, set, update, subscribe } = __signal_internal(initialValue);
 
   return {
